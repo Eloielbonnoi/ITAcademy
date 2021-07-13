@@ -10,7 +10,7 @@ let nom ='Eloi';
 let cognom = 'Isern';
 console.log( `El teu nom és ${ nom } i el cognom ${cognom}`);
 
-//No acabo d'entendre l'enunciat del Nivell 2.2
+//No acabo d'entendre l'enunciat del Nivell 2.2 Podria ser aquesta la resposta?
 
 let nom ='Eloi';
 let cognom = 'Isern';
