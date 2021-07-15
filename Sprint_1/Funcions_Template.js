@@ -24,7 +24,8 @@ const printName = (name, prename)=>{
 
 printName('Eloi', 'Isern');
 
-//Nivell 3.1
+//Nivell 3.1 Crea una matriu de deu funcions i empleni-la mitjançant un bucle. Cada funció comptarà del 0-9 imprimint-ho per pantalla. 
+//Invoqui cada funció de l'array iterativament. Haurà d'imprimir-se per pantalla el compte de 0-9 deu vegades
 
 let counters = [];
 
@@ -39,7 +40,7 @@ for (i=1; i <10; i++){
   counters.push(counter());
 };
 
-//Nivell 3.2 
+//Nivell 3.2 Crear una funció anònima autoinvocable (igualada a una variable) que imprimeixi per pantalla el nom d'usuari rebut com a paràmetre
 
 let userName;
 const pasName = (userName)=> console.log(userName);
