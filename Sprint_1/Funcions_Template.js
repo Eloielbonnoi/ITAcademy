@@ -1,16 +1,17 @@
-//Nivell 1
+//Nivell 1 Crear una funció que imprimeixi en consola el nom d'usuari sent invocada externament i passant el nom com a paràmetre.
 
 let userName;
 let pasName = (userName)=> console.log(userName);
 pasName('Eloi');
 
 //Nivell 2.1
+//Imprimir el nom i cognoms de l'usuari en variables mitjançant template literals, creant les variables i referenciant en la impressió de l'missatge
      
 let nom ='Eloi';
 let cognom = 'Isern';
 console.log( `El teu nom és ${ nom } i el cognom ${cognom}`);
 
-//No acabo d'entendre l'enunciat del Nivell 2.2 Podria ser aquesta la resposta?
+//Nivell 2.2 Invocar la funció mitjançant template literals. No acabo d'entendre l'enunciat. Podria ser aquesta la resposta?
 
 let nom ='Eloi';
 let cognom = 'Isern';
