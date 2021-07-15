@@ -1,7 +1,7 @@
 //Nivell 1 Crear una funció que imprimeixi en consola el nom d'usuari sent invocada externament i passant el nom com a paràmetre.
 
 let userName;
-let pasName = (userName)=> console.log(userName);
+const pasName = (userName)=> console.log(userName);
 pasName('Eloi');
 
 //Nivell 2.1
@@ -11,18 +11,12 @@ let nom ='Eloi';
 let cognom = 'Isern';
 console.log( `El teu nom és ${ nom } i el cognom ${cognom}`);
 
-//Nivell 2.2 Invocar la funció mitjançant template literals. No acabo d'entendre l'enunciat. Podria ser aquesta la resposta?
+//Nivell 2.2 Invocar la funció mitjançant template literals. FALTA ACABAR!!!!!!
 
-let nom ='Eloi';
-let cognom = 'Isern';
+let userName;
+const pasName = (userName)=> console.log(userName);
 
-const printName = (name, prename)=>{ 
-
-  console.log( `El teu nom és ${ name } i el cognom ${prename}`)
-  
-};
-
-printName('Eloi', 'Isern');
+console.log(`This is ${test1('hi there')} and ${test2('hi again')}`); //PER AIXÒ 
 
 //Nivell 3.1 Crea una matriu de deu funcions i empleni-la mitjançant un bucle. Cada funció comptarà del 0-9 imprimint-ho per pantalla. 
 //Invoqui cada funció de l'array iterativament. Haurà d'imprimir-se per pantalla el compte de 0-9 deu vegades
