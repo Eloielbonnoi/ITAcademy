@@ -58,7 +58,7 @@ for (i=1; i <10; i++){
 
 //Nivell 3.2 Crear una funció anònima autoinvocable (igualada a una variable) que imprimeixi per pantalla el nom d'usuari rebut com a paràmetre
 
-var printConsole = function(userName){
+var printConsole = (function(userName){
     console.log(userName);
-};
-printConsole('Eloi');
+})('Eloi');
+
