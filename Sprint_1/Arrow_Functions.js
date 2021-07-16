@@ -38,15 +38,22 @@ jo.decirNombre();
 
 
 //Nivell 3
-//Crear una function creadora d'objectes, abstraient la definició de les classes. Invocar-amb diferents definicions.
+//Crear una function creadora d'objectes, abstraient la definició de les classes. Invocar-amb diferents definicions. //RESOLT
 
-var creaObjectes = class Objecte {     
-  constructor(name, age){
-    this.name = name;
-    this.age = age;
+abstract class Animal {       //Classe abstracta
+  abstract Soroll(): void;
+}
+
+class Gat extends Animal {    //Classes concretes a partir de l'abstracta
+  Soroll(){
+    console.log('Marrameu');
   }
 }
 
- const novaPersona1 = new Objecte ('Eloi','25');
- const novaPersona2 = new Objecte ('Aina','33');
+class Gos extends Animal {
+  Soroll(){
+    console.log('Bub bub');
+  }
+}
+
 
