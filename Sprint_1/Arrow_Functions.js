@@ -6,19 +6,18 @@ const sumaArrow = ((a,b) => {
 })(3,4);
 
 //Nivell 2
-//Crear una arrow function que, rebent un paràmetre, retorni un objecte amb un atribut que tingui com a valor el paràmetre rebut.
+//Crear una arrow function que, rebent un paràmetre, retorni un objecte amb un atribut que tingui com a valor el paràmetre rebut. //RESOLT
 
-const arrowFunc = (param) => {
-  let spaceship = {  
-      
-  'Fuel Type': param ,
+const nauEspacial = (combustible) => {
+  return {  
+  'Fuel Type': combustible,
   color: 'silver' 
       
 };
-  console.log(spaceship);
       };
 
-arrowFunc('Diesel');
+const enterprise = nauEspacial('Diesel');
+console.log(enterprise);
 
 //Nivell 2.2
 //Crear una classe Persona que rebi un paràmetre 'nom' a l'ésser creat. La classe inclourà un mètode decirNombre que imprimeixi per consola el paràmetre 'Nom'. 
