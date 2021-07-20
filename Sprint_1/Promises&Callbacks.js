@@ -31,6 +31,15 @@ let arrowFunc = (param, funcio())=>{
   }
 }('',funcio());
 
+//Explorar opció
+
+function imprimir(msg){console.log(msg)} 
+//I dp
+let x = (txt, funcio) => funcio(text)
+
+// I per fer q funcioni
+x(“hola”, imprimir);
+
 //NIVELL 2.1
 //Donats els objectes employees i salaries, creu una arrow function getEmpleado que retorni una Promise efectuant la cerca en l'objecte pel seu id.
 
