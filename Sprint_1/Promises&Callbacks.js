@@ -23,6 +23,14 @@ function funcioPromise (){
 //Crear una arrow function que, rebent un paràmetre i una function callback, li passi a la funció un missatge 
 //o un altre (que s'imprimirà per consola) en funció del paràmetre.
 
+let arrowFunc = (param, funcio())=>{
+  if (param == true){
+  console.log('Va tot bé');
+  } else {
+  console.log('Cagada!');
+  }
+}('',funcio());
+
 //NIVELL 2.1
 //Donats els objectes employees i salaries, creu una arrow function getEmpleado que retorni una Promise efectuant la cerca en l'objecte pel seu id.
 
