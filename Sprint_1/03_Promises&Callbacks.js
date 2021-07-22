@@ -40,7 +40,7 @@ const arrowFunc = (param, print)=>{
 arrowFunc('hola', print);
 
 //NIVELL 2.1
-//Donats els objectes employees i salaries, creu una arrow function getEmpleado que retorni una Promise efectuant la cerca en l'objecte pel seu id.
+//Donats els objectes employees i salaries, crea una arrow function getEmpleado que retorni una Promise que efectui la cerca en l'objecte pel seu id.
 
 let employees = [{
     id: 1,
@@ -65,12 +65,12 @@ let salaries = [{
 }];
 
 const getEmpleado = (post)=> {   
-    return new Promise((resolve, reject) => {      
-      let output = ''; 
-        employees.forEach((post, index)=>{ 
-            output += `${post.id}`;
+    return new Promise((resolve, reject) => { 
+      
+      //Codi per retornar empleat per la seva id
+      
         })
-        console.log(output);
+        
             const error = false;
             if(!error){
                 resolve();
