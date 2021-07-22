@@ -4,20 +4,24 @@
 //Crear una function que retorni una Promise que invoqui la funcion resolve() o bé reject() que rep. 
 //Invocar-la des de fora pasandole totes dues funcions que imprimeixin un missatge diferent en cada cas.
 
-function funcioPromise (){
-  return new Promise(function(resolve, reject) {
-    let x = 0;
-      if (x == 0) {
-      resolve("Va tot bé");
-    } else {
-      reject("Hi ha un error");
-    }
-  });
-  
-  funcioPromise.then(
-    function(value) {myDisplayer(value);},
-    function(error) {myDisplayer(error);}
-  );
+function myDisplayer(some) {
+  console.log(some);
+}
+let myPromise = new Promise(function(myResolve, myReject) {
+  let x = 0;
+
+  if (x == 0) {
+    myResolve("OK");
+  } else {
+    myReject("Error");
+  }
+});
+
+myPromise.then(
+  function(value) {myDisplayer(value);},
+  function(error) {myDisplayer(error);}
+);
+
 }
 //NIVELL 1.2
 //Crear una arrow function que, rebent un paràmetre i una function callback, li passi a la funció un missatge 
@@ -59,6 +63,24 @@ let salaries = [{
     id: 3,
     salary: 2000
 }];
+
+const getEmpleado = (post)=> {   
+    return new Promise((resolve, reject) => {      
+      let output = ''; 
+        employees.forEach((post, index)=>{ 
+            output += `${post.id}`;
+        })
+        console.log(output);
+            const error = false;
+            if(!error){
+                resolve();
+            } else {
+                reject ('Error:Something went wrong'); //Sense un alarm??
+            }
+    }); 
+}
+
+getEmpleado(1)
 
 //NIVELL 2.2
 //Crea una altra arrow function getSalario que rebi com a paràmetre un objecte employee i retorni el seu salari.
