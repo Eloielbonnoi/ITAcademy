@@ -65,7 +65,7 @@ let salaries = [{
     salary: 2000
 }];
 
-const getEmpleado = (post)=> {   
+const getEmpleado = (filterById)=> {   
     return new Promise((resolve, reject) => { 
       
       //Codi per retornar empleat per la seva id
