@@ -2,13 +2,13 @@
 
 //NIVELL 1.1
 //Crear una function que retorni una Promise que invoqui la funcion resolve() o bé reject() que rep. 
-//Invocar-la des de fora pasandole totes dues funcions que imprimeixin un missatge diferent en cada cas.
+//Invocar-la des de fora pasandole totes dues funcions que imprimeixin un missatge diferent en cada cas. //RESOLT
 
 function myDisplayer(some) {
   console.log(some);
 }
 let myPromise = new Promise(function(myResolve, myReject) {
-  let x = 0;
+  let x = 0;  //Per comprovar en cas d'error provar-ho amb x !==0
 
   if (x == 0) {
     myResolve("OK");
@@ -21,8 +21,9 @@ myPromise.then(
   function(value) {myDisplayer(value);},
   function(error) {myDisplayer(error);}
 );
-
 }
+
+
 //NIVELL 1.2
 //Crear una arrow function que, rebent un paràmetre i una function callback, li passi a la funció un missatge 
 //o un altre (que s'imprimirà per consola) en funció del paràmetre. //RESOLT
@@ -37,7 +38,7 @@ const arrowFunc = (param, print)=>{
   }
 };
 
-arrowFunc('hola', print);
+arrowFunc('hola', print); //Per testar l'error deixar en blanc el paràmetre param
 
 //NIVELL 2.1
 //Donats els objectes employees i salaries, crea una arrow function getEmpleado que retorni una Promise que efectui la cerca en l'objecte pel seu id.
