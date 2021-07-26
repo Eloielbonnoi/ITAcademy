@@ -41,50 +41,49 @@ const arrowFunc = (param, print)=>{
 arrowFunc('hola', print); //Per testar l'error deixar en blanc el paràmetre param
 
 //NIVELL 2.1
-//Donats els objectes employees i salaries, crea una arrow function getEmpleado que retorni una Promise que efectui la cerca en l'objecte pel seu id.
+//Donats els objectes employees i salaries, crea una arrow function getEmpleado que retorni una Promise que efectui la cerca 
+//en l'objecte pel seu id. És a dir, que donada una Id ens retorni el nom de l'empleat corresponent.
 
 let employees = [{
     id: 1,
     name: 'Linux Torvalds'
-}, {
+    }, {
     id: 2,
     name: 'Bill Gates'
-},{
+    },{
     id: 3,
     name: 'Jeff Bezos'
-}];
+    }];
  
 let salaries = [{
     id: 1,
     salary: 4000
-}, {
+    }, {
     id: 2,
     salary: 1000
-}, {
+    }, {
     id: 3,
     salary: 2000
-}];
+    }];
 
 const getEmpleado = (filterById)=> {   
     return new Promise((resolve, reject) => { 
-      
-      //Codi per retornar empleat per la seva id
-      
-        })
-        
-            const error = false;
-            if(!error){
-                resolve();
-            } else {
-                reject ('Error:Something went wrong'); //Sense un alarm??
-            }
-    }); 
-}
 
-getEmpleado(1)
+function getEmpleado(empleadoId) {
+     let result = employees.filter(empleado => employees.id == empleadoId)
+      return result.name;
+      }
+//getEmpleado(1);
+console.log(getEmpleado(1));      
+        })
+    };
 
 //NIVELL 2.2
 //Crea una altra arrow function getSalario que rebi com a paràmetre un objecte employee i retorni el seu salari.
+
+const getSalario = (employee
+
+
 //NIVELL 2.3
 //Invoqui la primera Promise getEmpleado i posteriorment getSalario, niant l'execució de les dues promises.
 //NIVELL 3.1
