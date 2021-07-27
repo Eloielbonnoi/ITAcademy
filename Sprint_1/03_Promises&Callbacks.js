@@ -87,8 +87,7 @@ getEmpleado(1)
 
 
 //NIVELL 2.2
-//Crea una altra arrow function getSalario que rebi com a paràmetre un objecte employee i retorni el seu salari.
-//Cal detectar la id de l'objecte employee i després fer un bucle entre les id de l'array salarios per veure quina coincideix.
+//Crea una altra arrow function getSalario que rebi com a paràmetre un objecte employee i retorni el seu salari.//RESOLT
 
 const getSalaries =(objEmployee) =>{
   let result = salaries.find(v =>v.id == objEmployee.id)
@@ -107,5 +106,9 @@ console.log(getSalaries(linux));
 
 //NIVELL 2.3
 //Invoqui la primera Promise getEmpleado i posteriorment getSalario, niant l'execució de les dues promises.
+getEmpleado(1)               
+	.then(r => console.log(r)) 
+	.catch(err => console.error(err));
+
 //NIVELL 3.1
 //Fixi un element catch a la invocació de la fase anterior que capturi qualsevol error i l'imprimeixi per consola.
