@@ -88,23 +88,21 @@ getEmpleado(1)
 
 //NIVELL 2.2
 //Crea una altra arrow function getSalario que rebi com a paràmetre un objecte employee i retorni el seu salari.
+//Cal detectar la id de l'objecte employee i després fer un bucle entre les id de l'array salarios per veure quina coincideix.
 
-const getSalario = (obj)=> {
-	return new Promise(function(resolve, reject) {
-		const r = employees.find(e => e.id === id);
+const getSalaries =(objEmployee) =>{
+  let result = salaries.find(v =>v.id == objEmployee.id)
+  return result.salary
+};
+
+let linux = {
+  id: 1,
+  name: 'Linux Torvalds'
+}  
+console.log(getSalaries(linux));
+
 		
-    if (r) {
-      console.log('Treballador existent');
-			resolve(r);
-    	} else {
-     	 reject('Treballador desconegut!');
-    		}
-  	})
-	};
-
-getSalario()               
-	.then(r => console.log(r)) 
-	.catch(err => console.error(err));
+	
 //haura d'haver-hi un employee.id==salaries.id
 
 //NIVELL 2.3
