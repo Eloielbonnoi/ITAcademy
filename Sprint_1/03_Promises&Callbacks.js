@@ -67,7 +67,7 @@ const salaries = [{
     }];
 
 
-function getEmployee(id) => {
+const getEmpleado = (id)=> {
 	  return new Promise(function(resolve, reject) {
 		const r = employees.find(e => e.id === id);
 
@@ -80,7 +80,7 @@ function getEmployee(id) => {
   })
 };
 
-getEmployee(1)               
+getEmpleado(1)               
 	.then(r => console.log(r)) 
 	.catch(err => console.error(err));
 
