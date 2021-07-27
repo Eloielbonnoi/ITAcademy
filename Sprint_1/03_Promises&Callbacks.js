@@ -68,17 +68,17 @@ const salaries = [{
 
 
 const getEmpleado = (id)=> {
-	  return new Promise(function(resolve, reject) {
+	return new Promise(function(resolve, reject) {
 		const r = employees.find(e => e.id === id);
-
+		
     if (r) {
       console.log('Treballador existent');
 			resolve(r);
-    } else {
-      reject('Treballador desconegut!');
-    }
-  })
-};
+    	} else {
+     	 reject('Treballador desconegut!');
+    		}
+  	})
+	};
 
 getEmpleado(1)               
 	.then(r => console.log(r)) 
@@ -89,7 +89,22 @@ getEmpleado(1)
 //NIVELL 2.2
 //Crea una altra arrow function getSalario que rebi com a paràmetre un objecte employee i retorni el seu salari.
 
-const getSalario = (employee
+const getSalario = (obj)=> {
+	return new Promise(function(resolve, reject) {
+		const r = employees.find(e => e.id === id);
+		
+    if (r) {
+      console.log('Treballador existent');
+			resolve(r);
+    	} else {
+     	 reject('Treballador desconegut!');
+    		}
+  	})
+	};
+
+getSalario()               
+	.then(r => console.log(r)) 
+	.catch(err => console.error(err));
 //haura d'haver-hi un employee.id==salaries.id
 
 //NIVELL 2.3
