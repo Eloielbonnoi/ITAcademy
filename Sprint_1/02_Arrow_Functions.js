@@ -1,9 +1,11 @@
 //Nivell 1
-//Imprimir per pantalla el resultat d'una arrow function autoinvocable que sumi dos nombres. //RESOLT
+//Imprimir per pantalla el resultat d'una arrow function autoinvocable que sumi dos nombres. //CORREGIT
 
-const sumaArrow = ((a,b) => {
-   console.log(a + b);
+const sumaArrow = ((a,b)=> {
+return a +b;
 })(3,4);
+console.log(sumaArrow);
+              
 
 //Nivell 2
 //Crear una arrow function que, rebent un paràmetre, retorni un objecte amb un atribut que tingui com a valor el paràmetre rebut. //RESOLT
@@ -37,7 +39,8 @@ jo.decirNombre();
 
 
 //Nivell 3
-//Crear una function creadora d'objectes, abstraient la definició de les classes. Invocar-amb diferents definicions. //RESOLT
+//Crear una function creadora d'objectes, abstraient la definició de les classes. Invocar-amb diferents definicions. //PER CORREGIR
+//El N3 segueix sense implementar una classe abstracta! (de fet el abstract aquest no és javascript O.o)
 
 abstract class Animal {       //Classe abstracta
   abstract Soroll(): void;
