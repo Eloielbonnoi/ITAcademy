@@ -100,15 +100,27 @@ let linux = {
 }  
 console.log(getSalaries(linux));
 
-		
-	
-//haura d'haver-hi un employee.id==salaries.id
 
 //NIVELL 2.3
 //Invoqui la primera Promise getEmpleado i posteriorment getSalario, niant l'execució de les dues promises.
-getEmpleado(1)               
-	.then(r => console.log(r)) 
-	.catch(err => console.error(err));
-
 //NIVELL 3.1
 //Fixi un element catch a la invocació de la fase anterior que capturi qualsevol error i l'imprimeixi per consola.
+//D'entrada hauria fet
+getEmpleado(1)               
+	.then(r => console.log(r)) 
+    	.then(getSalaries(r))
+	.catch(err => console.error(err));
+
+//Però això no funciona ja que no reconeix la r
+
+let empl;  //He hagut d'assignar r a la variable empl ja que només existeix dins la arrow. No obstant això, tampoc funciona. 
+
+getEmpleado(1)               
+	.then(r => console.log(r)) 
+    	.then( r => empl = r)
+    	.then(getSalaries(empl))
+	.catch(err => console.error(err));
+
+
+
+
