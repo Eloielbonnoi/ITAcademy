@@ -39,7 +39,7 @@ jo.decirNombre();
 
 
 //Nivell 3
-//Crear una function creadora d'objectes, abstraient la definició de les classes. Invocar-amb diferents definicions. //PER CORREGIR
+//Crear una function creadora d'objectes, abstraient la definició de les classes. Invocar-amb diferents definicions. //PENDENT CORREGIR
 //El N3 segueix sense implementar una classe abstracta! (de fet el abstract aquest no és javascript O.o)
 
 abstract class Animal {       //Classe abstracta
