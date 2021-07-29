@@ -39,7 +39,7 @@ jo.decirNombre();
 
 
 //Nivell 3
-//Crear una function creadora d'objectes, abstraient la definició de les classes. Invocar-amb diferents definicions. //PENDENT CORREGIR
+//Crear una function creadora d'objectes, abstraient la definició de les classes. Invocar-amb diferents definicions. //CORREGIT
 
 var Animal = function() {
     if (this.constructor === Animal) {
