@@ -107,20 +107,8 @@ console.log(getSalaries(linux));
 //Fixi un element catch a la invocació de la fase anterior que capturi qualsevol error i l'imprimeixi per consola.
 //D'entrada hauria fet
 getEmpleado(1)               
-	.then(r => console.log(r)) 
-    //	.then(getSalaries(r)). //Per què aquesta opció no funciona??
-	.then(rr => getSalaries(rr))
-//	.then(rr => console.log(rr))
-	.catch(err => console.error(err));
-
-//Però això no funciona ja que no reconeix la r
-
-let empl;  //He hagut d'assignar r a la variable empl ja que només existeix dins la arrow. No obstant això, tampoc funciona. 
-
-getEmpleado(1)               
-	.then(r => console.log(r)) 
-    	.then( r => empl = r)
-    	.then(getSalaries(empl))
+	.then(r => {console.log(r); return r}) 
+    	.then(r => console.log(getSalaries(r)))
 	.catch(err => console.error(err));
 
 
