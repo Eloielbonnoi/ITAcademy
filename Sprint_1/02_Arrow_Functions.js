@@ -40,22 +40,40 @@ jo.decirNombre();
 
 //Nivell 3
 //Crear una function creadora d'objectes, abstraient la definició de les classes. Invocar-amb diferents definicions. //PENDENT CORREGIR
-//El N3 segueix sense implementar una classe abstracta! (de fet el abstract aquest no és javascript O.o)
 
-abstract class Animal {       //Classe abstracta
-  abstract Soroll(): void;
+var Animal = function() {
+    if (this.constructor === Animal) {
+      throw new Error("Can't instantiate abstract class!");
+    }
+};
+
+Animal.prototype.say = function() {
+    throw new Error("Abstract method!");
 }
 
-class Gat extends Animal {    //Classes concretes a partir de l'abstracta
-  Soroll(){
-    console.log('Marrameu');
-  }
+var Gat = function() {
+    Animal.apply(this, arguments);
+};
+Gat.prototype = Object.create(Animal.prototype);
+Gat.prototype.constructor = Gat;
+
+Gat.prototype.say = function() {
+    console.log('miau');
 }
 
-class Gos extends Animal {
-  Soroll(){
-    console.log('Bub bub');
-  }
+var Gos = function() {
+    Animal.apply(this, arguments);
+};
+Gos.prototype = Object.create(Animal.prototype);
+Gos.prototype.constructor = Gos;
+
+Gos.prototype.say = function() {
+    console.log('bub');
 }
 
+var garfield = new Gat();
+var rintintin = new Gos();
+
+garfield.say();
+rintintin.say();
 
