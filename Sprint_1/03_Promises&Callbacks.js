@@ -108,7 +108,9 @@ console.log(getSalaries(linux));
 //D'entrada hauria fet
 getEmpleado(1)               
 	.then(r => console.log(r)) 
-    	.then(getSalaries(r))
+    //	.then(getSalaries(r)). //Per què aquesta opció no funciona??
+	.then(rr => getSalaries(rr))
+//	.then(rr => console.log(rr))
 	.catch(err => console.error(err));
 
 //Però això no funciona ja que no reconeix la r
