@@ -1,28 +1,29 @@
-//ESTIC FENT-LO, NO HE ACABAT ENCARA
-
 //NIVELL 1.1
 //Crear una function que retorni una Promise que invoqui la funcion resolve() o bé reject() que rep. 
-//Invocar-la des de fora pasandole totes dues funcions que imprimeixin un missatge diferent en cada cas. //RESOLT
+//Invocar-la des de fora pasandole totes dues funcions que imprimeixin un missatge diferent en cada cas. //CORREGIT
 
-function myDisplayer(some) {
-  console.log(some);
-}
-let myPromise = new Promise(function(myResolve, myReject) {
-  let x = 0;  //Per comprovar en cas d'error provar-ho amb x !==0
-
-  if (x == 0) {
-    myResolve("OK");
-  } else {
-    myReject("Error");
-  }
+const hasMeeting = false;
+const meeting = new Promise ((resolve, reject) => {
+	if (!hasMeeting) {
+		const meetingDetails = {
+			name: 'Marketing Meeting',
+			location: 'Skype',
+			time: '1:00 PM'
+		}
+		resolve(meetingDetails);
+	} else {
+		reject(new Error('Meeting already scheduled'))
+	}
 });
 
-myPromise.then(
-  function(value) {myDisplayer(value);},
-  function(error) {myDisplayer(error);}
-);
-}
-
+meeting
+  .then( res => {
+	console.log('Meeting Scheduled');
+	console.log(res);
+  })
+  .catch( err => {
+	console.log(err.message);
+});
 
 //NIVELL 1.2
 //Crear una arrow function que, rebent un paràmetre i una function callback, li passi a la funció un missatge 
@@ -87,7 +88,7 @@ getEmpleado(1)
 
 
 //NIVELL 2.2
-//Crea una altra arrow function getSalario que rebi com a paràmetre un objecte employee i retorni el seu salari.//RESOLT
+//Crea una altra arrow function getSalario que rebi com a paràmetre un objecte employee i retorni el seu salari.//PER CORREGIR CAL QUE TB RETORNI UNA PROMISE
 
 const getSalaries =(objEmployee) =>{
   let result = salaries.find(v =>v.id == objEmployee.id)
@@ -102,7 +103,7 @@ console.log(getSalaries(linux));
 
 
 //NIVELL 2.3
-//Invoqui la primera Promise getEmpleado i posteriorment getSalario, niant l'execució de les dues promises.
+//Invoqui la primera Promise getEmpleado i posteriorment getSalario, niant l'execució de les dues promises. //PER CORREGIR
 //NIVELL 3.1
 //Fixi un element catch a la invocació de la fase anterior que capturi qualsevol error i l'imprimeixi per consola.
 //D'entrada hauria fet
