@@ -70,11 +70,10 @@ const salaries = [{
 
 const getEmpleado = (id)=> {
 	return new Promise(function(resolve, reject) {
-		const r = employees.find(e => e.id === id);
-		
+		const r = employees.find(e => e.id === id);		
     if (r) {
-      console.log('Treballador existent');
-			resolve(r);
+	 console.log(r);
+	 resolve(r);
     	} else {
      	 reject('Treballador desconegut!');
     		}
@@ -88,29 +87,38 @@ getEmpleado(1)
 
 
 //NIVELL 2.2
-//Crea una altra arrow function getSalario que rebi com a paràmetre un objecte employee i retorni el seu salari.//PER CORREGIR CAL QUE TB RETORNI UNA PROMISE
+//Crea una altra arrow function getSalario que rebi com a paràmetre un objecte employee i retorni el seu salari.//CORREGIT
+   
+const getSalaries = (objEmployee) =>{
+    return new Promise (function(resolve,reject) {
+      const s = salaries.find(v =>v.id === objEmployee.id);
+      
+    if (s) {
+      resolve(s.salary);
+    } else {
+      reject('Hi ha hagut un error');
+    }
+    })
+    };
 
-const getSalaries =(objEmployee) =>{
-  let result = salaries.find(v =>v.id == objEmployee.id)
-  return result.salary
-};
-
-let linux = {
-  id: 1,
-  name: 'Linux Torvalds'
-}  
-console.log(getSalaries(linux));
-
+    let linux = {
+        id: 1,
+        name: 'Linux Torvalds'
+      }  
+  
+    getSalaries(linux)               
+    .then(s => console.log(s)) 
+    .catch(err => console.error(err));
 
 //NIVELL 2.3
-//Invoqui la primera Promise getEmpleado i posteriorment getSalario, niant l'execució de les dues promises. //PER CORREGIR
+//Invoqui la primera Promise getEmpleado i posteriorment getSalario, niant l'execució de les dues promises. //CORREGIT
 //NIVELL 3.1
 //Fixi un element catch a la invocació de la fase anterior que capturi qualsevol error i l'imprimeixi per consola.
-//D'entrada hauria fet
-getEmpleado(1)               
-	.then(r => {console.log(r); return r}) 
-    	.then(r => console.log(getSalaries(r)))
-	.catch(err => console.error(err));
+
+  getEmpleado(1)
+    .then(r => getSalaries(r))
+    .then(r=> console.log(r))
+    .catch(err => console.error(err)); 
 
 
 
