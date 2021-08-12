@@ -1,5 +1,5 @@
 //NIVELL 1.1
-//Donats els objectes Employees i Salaries, creu una arrow function getEmpleado que retorni una Promise efectuant la cerca en l'objecte pel seu id. 
+//Donats els objectes Employees i Salaries, crea una arrow function getEmpleado que retorni una Promise efectuant la cerca en l'objecte pel seu id. 
 //Crea una altra arrow function getSalario que rebi com a paràmetre un objecte Employee i retorni el seu salari.
 
 let employees = [{
@@ -26,27 +26,38 @@ let salaries = [{
 
 const getEmpleado = (id)=> {
 	return new Promise(function(resolve, reject) {
-		const r = employees.find(e => e.id === id);
-		
+		const r = employees.find(e => e.id === id);		
     if (r) {
-      console.log('Treballador existent');
-			resolve(r);
+	 console.log(r);
+	 resolve(r);
     	} else {
      	 reject('Treballador desconegut!');
     		}
   	})
 	};
-
-const getSalaries =(objEmployee) =>{
-  let result = salaries.find(v =>v.id == objEmployee.id)
-  return result.salary
-};
+/*
+getEmpleado(1)               
+	.then(r => console.log(r)) 
+	.catch(err => console.error(err))
+*/
+   
+const getSalaries = (objEmployee) =>{
+    return new Promise (function(resolve,reject) {
+      const s = salaries.find(v =>v.id === objEmployee.id);
+      
+    if (s) {
+      resolve(s.salary);
+    } else {
+      reject('Hi ha hagut un error');
+    }
+    })
+    };
 
 
 //NIVELL 1.2
 //Crea una funció asíncrona que, rebent un id d'empleat, imprimeixi per pantalla el nom de l'empleat i el seu salari
 
-async 
+async function nomId(id)
 
 
 
