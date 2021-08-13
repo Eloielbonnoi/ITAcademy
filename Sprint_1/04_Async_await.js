@@ -69,5 +69,31 @@ nomId(1);
 
 //NIVELL 2
 //Crea una funció asíncrona que anomeni a una altra que retorni una Promise que efectuï la seva resolve amb una demora de 2 segons.
+
+const dades = false;
+const getDades = () =>{
+    return new Promise ((resolve, reject) => {
+        setTimeout(() => {
+          if (!dades){
+           const individuu = {
+             id:1, 
+             nom: 'Eloi', 
+             professio:'Músic'
+           }
+        resolve (individuu);  
+          }else{
+            reject (new Error('Hi ha alguna cosa que no rutlla'));
+          }       
+    }, 2000);     
+    })   
+}
+async function escriuDades () {
+	const dadesPerEscriure = await getDades();
+	console.log(dadesPerEscriure);
+}
+escriuDades().catch(err=> console.log(err.message));
+
 //NIVELL 3
-//Capturi tots els errors possibles del Nivell 2.
+//Per testar l'error només cal canviar la primera línia de codi per aquesta
+const dades= true;
+
