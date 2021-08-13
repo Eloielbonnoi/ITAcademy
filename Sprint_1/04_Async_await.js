@@ -57,9 +57,15 @@ const getSalaries = (objEmployee) =>{
 //NIVELL 1.2
 //Crea una funció asíncrona que, rebent un id d'empleat, imprimeixi per pantalla el nom de l'empleat i el seu salari
 
-async function nomId(id)
+async function nomId(id){
+	const getNom = await getEmpleado(id);
+	const nomEmpleat = getNom.name;
+	console.log(nomEmpleat);
+	const getSalari = await getSalaries(getNom);
+	console.log(getSalari);
+}
 
-
+nomId(1);
 
 //NIVELL 2
 //Crea una funció asíncrona que anomeni a una altra que retorni una Promise que efectuï la seva resolve amb una demora de 2 segons.
