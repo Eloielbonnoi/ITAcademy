@@ -14,5 +14,21 @@ function compteRegressiu (a) {
 //Niell 1.2
 //Crea una funció que, en executar-la, escrigui el seu nom en un fitxer.
 
+const fs = require('fs');
+
+fs.writeFile('./texto.txt', 'fs', function(err){  //Crearà l'arxiu texto.txt, amb el contingut 'linea u' i quan acabi executa funct
+    if (err){
+        console.log(err);
+    }
+    console.log('Arxiu creat');
+});
+
 //Nivell 1.3
 //Crea una altra funció que imprimeixi per pantalla el que llegeixi d'un fitxer.
+
+fs.readFile('./texto.txt', function(err, data){ 
+    if (err){
+    console.log(err)
+    } 
+    console.log(data.toString()); 
+}) 
