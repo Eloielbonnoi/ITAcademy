@@ -12,7 +12,7 @@ function compteRegressiu (a) {
     compteRegressiu(10);
 
 //Niell 1.2
-//Crea una funció que, en executar-la, escrigui el seu nom en un fitxer.
+//Crea una funció que, en executar-la, escrigui el seu nom en un fitxer. //RESOLT
 
 const fs = require('fs');
 
@@ -24,7 +24,7 @@ fs.writeFile('./texto.txt', 'fs', function(err){  //Crearà l'arxiu texto.txt, a
 });
 
 //Nivell 1.3
-//Crea una altra funció que imprimeixi per pantalla el que llegeixi d'un fitxer.
+//Crea una altra funció que imprimeixi per pantalla el que llegeixi d'un fitxer. //RESOLT
 
 fs.readFile('./texto.txt', function(err, data){ 
     if (err){
