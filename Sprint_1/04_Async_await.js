@@ -96,4 +96,3 @@ escriuDades().catch(err=> console.log(err.message));
 //NIVELL 3
 //Per testar l'error només cal canviar la primera línia de codi per aquesta
 const dades= true;
-
