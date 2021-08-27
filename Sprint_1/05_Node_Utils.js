@@ -80,7 +80,7 @@ exec('ls -lh', (error,stdout,stderr)=>{ //ls -lh tradueix el resultat a quelcom 
 
 //NIVELL 3
 //Nivell 3.1
-//Creu una funció que creï dos fitxers codificats en hexadecimal i en base64 respectivament, a partir del fitxer de l'exercici inicial.
+//Crea una funció que creï dos fitxers codificats en hexadecimal i en base64 respectivament, a partir del fitxer de l'exercici inicial.
 
 //Nivell 3.2
 //Crea una funció que guardi en disc els fitxers del punt anterior encriptats amb algorisme aes-192-cbc, i esborri els fitxers inicials.
