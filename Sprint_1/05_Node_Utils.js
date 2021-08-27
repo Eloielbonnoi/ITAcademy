@@ -65,6 +65,19 @@ if(/.gz$/i.test(filename)==true){
 //Nivell 2.2
 //Crea una funció que llisti per consola el contingut del directori d'usuari. Utilitzi node Child Processes.
 
+const { exec } = require('child_process') //Pq la constant va entre {} ?
+exec('ls -lh', (error,stdout,stderr)=>{ //ls -lh tradueix el resultat a quelcom llegible  
+   if(error){
+       console.log(`error: ${error.message}`); //Error (error en el command inicial)
+       return
+   } 
+   if(stderr){
+    console.log(`stderr: ${stderror}`); //per si hi ha error a Terminal amb el comando ja executat
+    return
+   } 
+   console.log(`stdout: ${stdout}`);
+});
+
 //NIVELL 3
 //Nivell 3.1
 //Creu una funció que creï dos fitxers codificats en hexadecimal i en base64 respectivament, a partir del fitxer de l'exercici inicial.
