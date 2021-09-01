@@ -19,7 +19,7 @@ function compteRegressiu (a) {
 
 const fs = require('fs');
 
-fs.writeFile('./texto.txt', 'fs', function(err){  //Crearà l'arxiu texto.txt, amb el contingut 'linea u' i quan acabi executa funct
+fs.writeFile('./texto.txt', 'Eloi Isern', function(err){  //Crearà l'arxiu texto.txt, amb el contingut 'Eloi Isern' i quan acabi executa funct
     if (err){
         console.log(err);
     }
@@ -40,7 +40,6 @@ fs.readFile('./texto.txt', function(err, data){
 //Nivell 2.1
 //Crea una funció que comprimeixi el file del nivell 1 //RESOLT
 
-const compression = require('compression');
 const zlib = require('zlib');
 const filename = "./texto.txt"
 const compress = zlib.createGzip();//Comprimir
