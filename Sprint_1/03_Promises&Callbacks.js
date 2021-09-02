@@ -3,7 +3,8 @@
 //Invocar-la des de fora pasandole totes dues funcions que imprimeixin un missatge diferent en cada cas. //CORREGIT
 
 const hasMeeting = false;
-const meeting = new Promise ((resolve, reject) => {
+function meeting() { 
+  return new Promise ((resolve, reject) => {
 	if (!hasMeeting) {
 		const meetingDetails = {
 			name: 'Marketing Meeting',
@@ -14,9 +15,9 @@ const meeting = new Promise ((resolve, reject) => {
 	} else {
 		reject(new Error('Meeting already scheduled'))
 	}
-});
+})};
 
-meeting
+meeting()
   .then( res => {
 	console.log('Meeting Scheduled');
 	console.log(res);
