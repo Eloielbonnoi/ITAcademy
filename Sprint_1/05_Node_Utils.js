@@ -109,12 +109,6 @@ const crypto = require('crypto');
 let key = '123456781234567812345678';  //Clau o password
 let iv = crypto.randomBytes(16);
 
-let cipher = crypto.createCipheriv('aes-192-cbc', key, iv);
-let encrypted = cipher.update(secret_message, 'utf-8', 'hex');
-encrypted += cipher.final('hex');
-
-console.log('encrypted: ' + encrypted);
-
 function encrypterFile(inputPath, outputPath, callback) {
     fs.readFile(inputPath, 'utf8', function (err, data) {
         if (err) {
