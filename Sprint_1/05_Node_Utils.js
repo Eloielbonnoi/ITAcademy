@@ -81,6 +81,26 @@ exec('ls -lh', (error, stdout, stderr) => { //ls -lh tradueix el resultat a quel
 //Nivell 3.1
 //Crea una funció que creï dos fitxers codificats en hexadecimal i en base64 respectivament, a partir del fitxer de l'exercici inicial.
 
+const fs = require('fs')
+function multiFormatExport(inputPath, outputPath, format) {
+  fs.readFile(inputPath, 'utf8', function (err, data) {
+    if (err) {
+      return console.log(err);
+    }
+    var buf = Buffer.from(data, 'ascii');
+    var newData = buf.toString(format);
+    fs.writeFile(outputPath, newData, function (err) {
+      if (err) {
+        console.log(err);
+      }
+      console.log(`Arxiu creat en format ${format}`);
+    });
+  })
+};
+
+multiFormatExport('./texto.txt', './textohex.txt', 'hex');
+multiFormatExport('./texto.txt', './textobase.txt', 'base64');
+
 //Nivell 3.2
 //Crea una funció que guardi en disc els fitxers del punt anterior encriptats amb algorisme aes-192-cbc, i esborri els fitxers inicials.
 
