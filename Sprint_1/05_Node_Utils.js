@@ -132,8 +132,8 @@ function encrypterFile(inputPath, outputPath, callback) {
     })
 };
 
-encrypterFile('./textohex.txt', './hex_encrypted.txt')
-encrypterFile('./textobase.txt', './base_encrypted.txt')
+encrypterFile('./textohex.txt', './hex_encrypted.txt');
+encrypterFile('./textobase.txt', './base_encrypted.txt');
 
 //Nivell 3.3
 //Crea una altra funció que desencripti i descodifiqui els fitxers finals tornant a generar els inicials.
