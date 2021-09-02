@@ -3,15 +3,15 @@
 //Crea una funció que imprimeixi recursivamente un missatge a la consola amb demores d'un segon.//RESOLT
 //He creat aquesta funció que té una via d'escapada quan arriba a 0. 
 
-function compteRegressiu (a) {
-        setTimeout(()=>{
+function compteRegressiu(a) {
+    setTimeout(() => {
         if (a < 0) return
         console.log(a)
-        return compteRegressiu(a-1); //Si canvio el valor return compteRegressiu(a); passsa a ser un bucle infinit
-        }, 1000)     
-    };
+        return compteRegressiu(a - 1); //Si canvio el valor return compteRegressiu(a); passsa a ser un bucle infinit
+    }, 1000)
+};
 
-    compteRegressiu(10);
+compteRegressiu(10);
 
 //Nivell 1.2
 //Crea una funció que, en executar-la, escrigui el seu nom en un fitxer. //RESOLT
@@ -19,8 +19,8 @@ function compteRegressiu (a) {
 
 const fs = require('fs');
 
-fs.writeFile('./texto.txt', 'Eloi Isern', function(err){  //Crearà l'arxiu texto.txt, amb el contingut 'Eloi Isern' i quan acabi executa funct
-    if (err){
+fs.writeFile('./texto.txt', 'Eloi Isern', function (err) {  //Crearà l'arxiu texto.txt, amb el contingut 'Eloi Isern' i quan acabi executa funct
+    if (err) {
         console.log(err);
     }
     console.log('Arxiu creat');
@@ -29,12 +29,12 @@ fs.writeFile('./texto.txt', 'Eloi Isern', function(err){  //Crearà l'arxiu text
 //Nivell 1.3
 //Crea una altra funció que imprimeixi per pantalla el que llegeixi d'un fitxer. //RESOLT
 
-fs.readFile('./texto.txt', function(err, data){ 
-    if (err){
-    console.log(err)
-    } 
-    console.log(data.toString()); 
-}) 
+fs.readFile('./texto.txt', function (err, data) {
+    if (err) {
+        console.log(err)
+    }
+    console.log(data.toString());
+})
 
 //NIVELL 2
 //Nivell 2.1
@@ -45,17 +45,17 @@ const filename = "./texto.txt"
 const compress = zlib.createGzip();//Comprimir
 const decompress = zlib.createGunzip();//Descomprimir
 const readstream = fs.createReadStream(filename)
-function compressfile(filename){
-    var newfilename = filename+".gz",
+function compressfile(filename) {
+    var newfilename = filename + ".gz",
         writestream = fs.createWriteStream(newfilename);
     readstream.pipe(compress).pipe(writestream);
 }
-function decompressfile(filename){
+function decompressfile(filename) {
     var newfilename = filename.replace(".gz", ""),
         writestream = fs.createWriteStream(newfilename);
     readstream.pipe(decompress).pipe(writestream);
 }
-if(/.gz$/i.test(filename)==true){
+if (/.gz$/i.test(filename) == true) {
     decompressfile(filename)
 } else {
     compressfile(filename);
@@ -65,16 +65,16 @@ if(/.gz$/i.test(filename)==true){
 //Crea una funció que llisti per consola el contingut del directori d'usuari. Utilitzi node Child Processes.
 
 const { exec } = require('child_process') //Pq la constant va entre {} ?
-exec('ls -lh', (error,stdout,stderr)=>{ //ls -lh tradueix el resultat a quelcom llegible  
-   if(error){
-       console.log(`error: ${error.message}`); //Error (error en el command inicial)
-       return
-   } 
-   if(stderr){
-    console.log(`stderr: ${stderror}`); //per si hi ha error a Terminal amb el comando ja executat
-    return
-   } 
-   console.log(`stdout: ${stdout}`);
+exec('ls -lh', (error, stdout, stderr) => { //ls -lh tradueix el resultat a quelcom llegible  
+    if (error) {
+        console.log(`error: ${error.message}`); //Error (error en el command inicial)
+        return
+    }
+    if (stderr) {
+        console.log(`stderr: ${stderror}`); //per si hi ha error a Terminal amb el comando ja executat
+        return
+    }
+    console.log(`stdout: ${stdout}`);
 });
 
 //NIVELL 3
