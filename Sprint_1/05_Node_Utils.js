@@ -19,7 +19,7 @@ compteRegressiu(10);
 
 const fs = require('fs');
 
-fs.writeFile('./texto.txt', 'Eloi Isern', function (err) {  //Crearà l'arxiu texto.txt, amb el contingut 'Eloi Isern' i quan acabi executa funct
+fs.writeFile('./texto.txt', 'Eloi Isern', function (err) {  
     if (err) {
         console.log(err);
     }
@@ -64,14 +64,14 @@ if (/.gz$/i.test(filename) == true) {
 //Nivell 2.2
 //Crea una funció que llisti per consola el contingut del directori d'usuari. Utilitzi node Child Processes.
 
-const { exec } = require('child_process') //Pq la constant va entre {} ?
-exec('ls -lh', (error, stdout, stderr) => { //ls -lh tradueix el resultat a quelcom llegible  
+const { exec } = require('child_process') 
+exec('ls -lh', (error, stdout, stderr) => {  
     if (error) {
-        console.log(`error: ${error.message}`); //Error (error en el command inicial)
+        console.log(`error: ${error.message}`); 
         return
     }
     if (stderr) {
-        console.log(`stderr: ${stderror}`); //per si hi ha error a Terminal amb el comando ja executat
+        console.log(`stderr: ${stderror}`); 
         return
     }
     console.log(`stdout: ${stdout}`);
