@@ -137,3 +137,35 @@ encrypterFile('./textobase.txt', './base_encrypted.txt');
 
 //Nivell 3.3
 //Crea una altra funció que desencripti i descodifiqui els fitxers finals tornant a generar els inicials.
+//COM ÉS QUE NO FUNCIONA?? ON ESTÀ L'ERROR? NO ENTENC QUÈ EM DIU LA CONSOLA
+
+const fs = require('fs')
+const crypto = require('crypto');
+let key = '123456781234567812345678';  //Clau o password
+let iv = crypto.randomBytes(16);
+
+function encrypterFile(inputPath, outputPath, callback) {
+    fs.readFile(inputPath, 'utf8', function (err, data) {
+        if (err) {
+            return console.log(err);
+        }
+        let cipher = crypto.createCipheriv('aes-192-cbc', key, iv);
+        let encrypted = cipher.update(inputPath, 'utf-8', 'hex');
+        encrypted += cipher.final('hex');
+        fs.writeFile(outputPath, encrypted, function (err) {
+            if (err) {
+                console.log(err);
+            }
+            console.log(`Arxiu ${outputPath} creat amb èxit`);
+            try {
+                fs.unlinkSync(inputPath)
+                console.log(`Arxiu ${inputPath} esborrat`);
+            } catch (err) {
+                console.error(err)
+            }
+        });
+    })
+};
+
+encrypterFile('./textohex.txt', './hex_encrypted.txt');
+encrypterFile('./textobase.txt', './base_encrypted.txt');
