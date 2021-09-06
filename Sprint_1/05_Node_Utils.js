@@ -169,3 +169,4 @@ function encrypterFile(inputPath, outputPath, callback) {
 
 encrypterFile('./textohex.txt', './hex_encrypted.txt');
 encrypterFile('./textobase.txt', './base_encrypted.txt');
+
