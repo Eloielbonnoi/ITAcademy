@@ -62,10 +62,10 @@ if (/.gz$/i.test(filename) == true) {
 }
 
 //Nivell 2.2
-//Crea una funció que llisti per consola el contingut del directori d'usuari. Utilitzi node Child Processes.
+//Crea una funció que llisti per consola el contingut del directori d'usuari. Utilitzi node Child Processes. CORREGIT 15-10
 
 const { exec } = require('child_process') 
-exec('ls -lh', (error, stdout, stderr) => {  
+exec('ls /usr', (error, stdout, stderr) => {  
     if (error) {
         console.log(`error: ${error.message}`); 
         return
@@ -81,7 +81,7 @@ exec('ls -lh', (error, stdout, stderr) => {
 //Nivell 3.1
 //Crea una funció que creï dos fitxers codificats en hexadecimal i en base64 respectivament, a partir del fitxer de l'exercici inicial.
 
-const fs = require('fs')
+const fs = require('fs');
 function multiFormatExport(inputPath, outputPath, format) {
   fs.readFile(inputPath, 'utf8', function (err, data) {
     if (err) {
@@ -104,7 +104,7 @@ multiFormatExport('./texto.txt', './textobase.txt', 'base64');
 //Nivell 3.2
 //Crea una funció que guardi en disc els fitxers del punt anterior encriptats amb algorisme aes-192-cbc, i esborri els fitxers inicials.
 
-const fs = require('fs')
+const fs = require('fs');
 const crypto = require('crypto');
 let key = '123456781234567812345678';  //Clau o password
 let iv = crypto.randomBytes(16);
