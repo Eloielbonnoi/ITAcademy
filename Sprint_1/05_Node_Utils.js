@@ -62,7 +62,8 @@ if (/.gz$/i.test(filename) == true) {
 }
 
 //Nivell 2.2
-//Crea una funció que llisti per consola el contingut del directori d'usuari. Utilitzi node Child Processes. CORREGIT 15-10
+//Crea una funció que llisti per consola el contingut del directori d'usuari. Utilitzi node Child Processes. CAL CORREGIR DE NOU. CAL QUE NO NOMÉS FUNCIONI AL MEU ORDINADOR. HA DE SERVIR
+//PER QUALSEVOL MÀQUINA
 
 const { exec } = require('child_process') 
 exec('ls /usr', (error, stdout, stderr) => {  
