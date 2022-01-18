@@ -66,7 +66,7 @@ if (/.gz$/i.test(filename) == true) {
 //PER QUALSEVOL MÀQUINA
 
 const { exec } = require('child_process') 
-exec('ls /usr', (error, stdout, stderr) => {  
+exec(__dirname, (error, stdout, stderr) => {  
     if (error) {
         console.log(`error: ${error.message}`); 
         return
